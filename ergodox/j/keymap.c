@@ -12,6 +12,8 @@
 #define TAPPING_TERM 250
 #define RETRO_TAPPING yes
 #define PERMISSIVE_HOLD yes
+// I want to use this for typing things like ~
+#define NO_AUTO_SHIFT_SPECIAL no
 
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
@@ -27,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	       KC_EQUAL,KC_1,KC_2,KC_3,KC_4,KC_5,TT(2),CTL_T(KC_TAB),KC_Q,KC_W,KC_E,KC_R,KC_T,TT(1),
 	       KC_BSPACE,KC_A,KC_S,KC_D,CTL_T(KC_F),KC_G,
 	       KC_LSHIFT,CTL_T(KC_Z),KC_X,KC_C,KC_V,GUI_T(KC_B),SCMD_T(KC_LBRACKET),
-	       LT(1,KC_GRAVE),KC_QUOTE,TT(2),KC_LEFT,ALT_T(KC_RIGHT),
+	       KC_GRAVE,KC_QUOTE,TT(2),KC_LEFT,ALT_T(KC_RIGHT),
 
 	       ALT_T(KC_APPLICATION),KC_LGUI,KC_HOME,
 	       KC_SPACE,KC_LCTL,KC_END,
