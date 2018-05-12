@@ -8,7 +8,10 @@
 
 #include "keymap_nordic.h"
 
-
+#undef  TAPPING_TERM
+#define TAPPING_TERM 250
+#define RETRO_TAPPING yes
+#define PERMISSIVE_HOLD yes
 
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
