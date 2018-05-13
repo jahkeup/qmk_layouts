@@ -13,5 +13,4 @@
 #define TAPPING_TERM 150
 #define RETRO_TAPPING yes
 #define PERMISSIVE_HOLD yes
-#define NO_AUTO_SHIFT_SPECIAL no
-
+#undef NO_AUTO_SHIFT_SPECIAL
