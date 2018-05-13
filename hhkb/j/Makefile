@@ -8,7 +8,7 @@ HEX=$(QMK_TOP)/$(KEYBOARD)_$(LAYOUT).hex
 $(HEX): build
 
 build:
-	make -C $(QMK_TOP) $(KEYBOARD):$(LAYOUT)
+	make -C $(QMK_TOP) $(KEYBOARD):$(LAYOUT) LAYOUTS=hhkb
 
 flash: $(HEX)
 	sudo dfu-programmer $(CONTROLLER) erase --force
