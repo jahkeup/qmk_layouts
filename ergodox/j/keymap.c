@@ -2,25 +2,14 @@
 #include "debug.h"
 #include "action_layer.h"
 #include "version.h"
-
-
-#include "keymap_german.h"
-
-#include "keymap_nordic.h"
-
-#undef  TAPPING_TERM
-#define TAPPING_TERM 250
-#define RETRO_TAPPING yes
-#define PERMISSIVE_HOLD yes
-// I want to use this for typing things like ~
-#define NO_AUTO_SHIFT_SPECIAL no
+#include "config.h"
 
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
   EPRM,
   VRSN,
   RGB_SLD,
-  
+
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -93,7 +82,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-    
+
   }
   return true;
 }
