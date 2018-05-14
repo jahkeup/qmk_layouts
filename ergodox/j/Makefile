@@ -14,6 +14,6 @@ clean:
 	rm -f $(HEX)
 
 flash: $(HEX)
-	sudo teensy-loader-cli --mcu=$(CONTROLLER) -w -v $(HEX)
+	sudo $$(which teensy-loader-cli) --mcu=$(CONTROLLER) -w -v $(HEX)
 
 wait-flash: flash
