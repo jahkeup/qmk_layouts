@@ -1,5 +1,6 @@
 KEYBOARD=ergodox_ez
 CONTROLLER=atmega32u4
+LOADER = $(shell which teensy-loader-cli)
 
 LAYOUT=$(notdir $(realpath .))
 QMK_TOP=../../../..
@@ -14,6 +15,6 @@ clean:
 	rm -f $(HEX)
 
 flash: $(HEX)
-	sudo teensy-loader-cli --mcu=$(CONTROLLER) -w -v $(HEX)
+	sudo $(LOADER) --mcu=$(CONTROLLER) -w -v $(HEX)
 
 wait-flash: flash
