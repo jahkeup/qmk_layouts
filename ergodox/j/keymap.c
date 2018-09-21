@@ -10,28 +10,33 @@ enum custom_keycodes {
   RGB_SLD,
 };
 
+#define L_BASE  0
+#define L_CHAR  1
+#define L_MEDIA 2
+#define L_WM    3
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-  [0] = LAYOUT_ergodox(
-               KC_EQUAL,KC_1,KC_2,KC_3,KC_4,KC_5,TT(2),
-               CTL_T(KC_TAB),KC_Q,KC_W,KC_E,KC_R,KC_T,TT(1),
-               KC_BSPACE,KC_A,KC_S,KC_D,CTL_T(KC_F),KC_G,
-               KC_LSHIFT,CTL_T(KC_Z),KC_X,KC_C,KC_V,GUI_T(KC_B),SCMD_T(KC_LBRACKET),
-               KC_GRAVE,KC_QUOTE,TT(2),KC_LEFT,ALT_T(KC_RIGHT),
+  [L_BASE] = LAYOUT_ergodox(
+               KC_EQUAL, KC_1, KC_2, KC_3, KC_4, KC_5, TT(2),
+               CTL_T(KC_TAB), KC_Q, KC_W, KC_E, KC_R, KC_T, TT(L_CHAR),
+               KC_BSPACE, KC_A, KC_S, KC_D, CTL_T(KC_F), KC_G,
+               KC_LSHIFT, CTL_T(KC_Z), KC_X, KC_C, KC_V, GUI_T(KC_B), SCMD_T(KC_LBRACKET),
+               KC_GRAVE, KC_QUOTE, TT(L_MEDIA), KC_LEFT, ALT_T(KC_RIGHT),
 
                ALT_T(KC_APPLICATION),KC_LGUI,KC_HOME,
                KC_SPACE,KC_LCTL,KC_END,
 
                OSL(2),KC_6,KC_7,KC_8,KC_9,KC_0,KC_MINUS,
-               OSL(1),KC_Y,KC_U,KC_I,KC_O,KC_P,KC_BSLASH,
+               OSL(1),KC_Y,KC_U,KC_I,LT(L_MEDIA,KC_O),KC_P,KC_BSLASH,
                KC_H,CTL_T(KC_J),KC_K,KC_L,KC_SCOLON,GUI_T(KC_QUOTE),
                SCMD_T(KC_RBRACKET),GUI_T(KC_N),KC_M,KC_COMMA,KC_DOT,RCTL_T(KC_SLASH),KC_RSHIFT,
-               ALT_T(KC_UP),KC_DOWN,KC_LBRACKET,KC_RBRACKET,MO(1),
+               ALT_T(KC_UP),KC_DOWN,KC_LBRACKET,KC_RBRACKET,MO(L_BASE),
 
                KC_LALT,CTL_T(KC_ESCAPE),KC_PGUP,KC_PGDOWN,
                KC_RCTL,KC_ENTER),
 
-  [1] = LAYOUT_ergodox(
+  [L_CHAR] = LAYOUT_ergodox(
                KC_ESCAPE,KC_F1,KC_F2,KC_F3,KC_F4,KC_F5,LGUI(KC_GRAVE),
                KC_GRAVE,KC_EXLM,KC_AT,KC_LCBR,KC_RCBR,KC_PIPE,KC_TRNS,
                KC_TRNS,KC_HASH,KC_DLR,KC_LPRN,KC_RPRN,KC_GRAVE,
@@ -51,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                KC_TRNS,KC_TRNS,KC_TRNS,
                KC_TRNS,KC_TRNS,KC_TRNS),
 
-  [2] = LAYOUT_ergodox(
+  [L_MEDIA] = LAYOUT_ergodox(
                KC_ESCAPE,KC_F1,KC_F2,KC_F3,KC_F4,KC_F5,KC_TRNS,
                KC_TRNS,KC_TRNS,KC_WWW_BACK,KC_MS_UP,KC_WWW_FORWARD,KC_TRNS,KC_TRNS,
                KC_TRNS,KC_TRNS,KC_MS_LEFT,KC_MS_DOWN,KC_MS_RIGHT,KC_MS_WH_UP,
@@ -66,6 +71,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_MEDIA_PLAY_PAUSE,
                KC_TRNS,KC_TRNS,KC_TRNS,KC_MEDIA_PREV_TRACK,KC_MEDIA_NEXT_TRACK,KC_TRNS,KC_TRNS,
                KC_AUDIO_VOL_UP,KC_AUDIO_VOL_DOWN,KC_AUDIO_MUTE,KC_TRNS,KC_TRNS,
+
+               KC_TRNS,KC_TRNS,KC_TRNS,
+               KC_TRNS,KC_TRNS,KC_TRNS),
+
+    [L_WM] = LAYOUT_ergodox(
+               KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
+               KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
+               KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
+               KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
+               KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
+
+               KC_TRNS,KC_TRNS,KC_TRNS,
+               KC_TRNS,KC_TRNS,KC_TRNS,
+
+               KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
+               KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
+               KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
+               KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
+               KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
 
                KC_TRNS,KC_TRNS,KC_TRNS,
                KC_TRNS,KC_TRNS,KC_TRNS),
