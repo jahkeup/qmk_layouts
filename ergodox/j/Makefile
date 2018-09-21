@@ -8,7 +8,7 @@ HEX=$(QMK_TOP)/$(KEYBOARD)_$(LAYOUT).hex
 
 build: $(HEX)
 
-$(HEX): $(wildcard *.c)
+$(HEX): $(wildcard *.c) $(wildcard *.h) rules.mk
 	make -C $(QMK_TOP) $(KEYBOARD):$(LAYOUT)
 
 clean:
