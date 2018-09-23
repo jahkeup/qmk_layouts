@@ -1,7 +1,7 @@
 // TAPPING_TERM defines the duration of a "tap" where when exceeded,
 // is not registered as a tap.
 #undef  TAPPING_TERM
-#define TAPPING_TERM 250
+#define TAPPING_TERM 300
 // This makes it easier for fast typists to use dual-function
 // keys. Without this, if you let go of a held key inside the tapping
 // term, it won't register.
